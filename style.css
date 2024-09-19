@@ -1,0 +1,47 @@
+body{
+    
+    background-color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.lua{
+    background: black;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+}
+
+.lua::before{
+    content: "";
+    background-color: silver;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    animation: 3s mover linear infinite alternate;
+}
+
+@keyframes mover{
+    0%{
+        transform: translateX(40px) scale(0.9);
+        box-shadow: none;
+    }
+
+    50%{
+        transform: translate(0px,0px) scale(1.02);
+        box-shadow: 0 0 10px silver, 0 0 80px 2px silver;
+    } 
+
+    100%{
+        transform: translateX(-40px) scale(0.9);
+        box-shadow: none;
+    }
+}
+
